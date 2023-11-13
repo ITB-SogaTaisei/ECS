@@ -1,0 +1,47 @@
+
+
+
+/* ユーザー関連のcss */
+.ECS-login-input {
+    border-radius: 2px;
+    margin-top: 5px;
+    border: solid 2px #c0aeae;
+    background-color: #ffffff;
+}
+.ECS-check-label {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+}
+.ECS-require-input-label {
+    margin-top: 5px;
+    margin-left: 4px;
+    border-radius: 2px;
+    background-color: #cc3b4c;
+}
+
+.ECS-require-input-label-text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: normal;
+    margin: 5px;
+    color: #ffffff;
+}
+.ECS-submit {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: normal;
+    letter-spacing: normal;
+    color: white;
+    background-color: #2e83c8;
+}
+.ECS-login {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #2e83c8;
+}
