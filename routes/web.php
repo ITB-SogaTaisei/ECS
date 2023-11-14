@@ -22,3 +22,4 @@ Route::resource('products', ProductController::class)->middleware(['auth', 'veri
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/product/{id}', [ProductController::class, 'show']);

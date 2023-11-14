@@ -16,6 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->integer('price')->unsigned();
+            $table->integer('stock')->unsigned()->default(0);
+            $table->string('image')->nullable(); 
             $table->timestamps();
         });
     }
