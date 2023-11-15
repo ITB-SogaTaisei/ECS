@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -42,6 +43,15 @@ class ProductController extends Controller
 
         return view('products.show', ['productData' => $productData]);
     }
+
+    public function purchase($id)
+    {
+        $productData = Product::find($id);
+        $userData = User::find($id);
+
+        return view('products.purchase', ['productData' => $productData], ['userData' => $userData]);
+    }
+
 
     /**
      * Show the form for editing the specified resource.
