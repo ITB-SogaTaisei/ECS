@@ -9,8 +9,10 @@
                     <div class="card">
                         
                         <div class="card-body">
-                            <a href="{{ url('/product', $product->id) }}" class="card-title">{{ $product->name }}</a>
-                            <img src="{{ $product->image }}" class="card-img-top" alt="{{ $product->name }}">
+                            <a href="{{ url('/product', $product->id) }}" class="card-title">{{ $product->name }}
+                                <img src="{{ $product->image }}" class="card-img-top" alt="{{ $product->name }}">
+                            </a>
+                            
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item">Price: {{ $product->price }}</li>

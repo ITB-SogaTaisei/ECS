@@ -4,7 +4,10 @@
 
 <div class="row">
     <div class="col-md-6">
-        <img src="{{ $productData->image }}" class="img-fluid" alt="{{ $productData->name }}">
+        <!-- <img src="{{ $productData->image }}" class="img-fluid" alt="{{ $productData->name }}"> -->
+        @if ($productData->image)
+            <img src="{{ asset($productData->image) }}" class="w-100 img-fluid">
+        @endif
     </div>
     <div class="col-md-6">
         <h2 class="mb-3">{{ $productData->name }}</h2>
