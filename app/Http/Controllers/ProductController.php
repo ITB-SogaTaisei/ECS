@@ -62,6 +62,8 @@ class ProductController extends Controller
         return view('products.purchase', ['productData' => $productData], ['userData' => $userData]);
     }
 
+   
+
 
     /**
      * Show the form for editing the specified resource.
