@@ -26,3 +26,4 @@ Route::get('/product/{id}', [ProductController::class, 'show']);
 
 Route::get('/product', [ProductController::class, 'index']);
 Route::get('/product/{id}/purchase', [ProductController::class, 'purchase']);
+Route::get('/product/{id}/purchase/complete', [ProductController::class, 'complete']);

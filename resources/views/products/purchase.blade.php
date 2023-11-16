@@ -4,8 +4,10 @@
 
 <div class="row">
     <div class="col-md-6">
-    @if ($productData->image)
+        @if ($productData->image)
             <img src="{{ asset($productData->image) }}" class="w-100 img-fluid">
+            @else
+            <img src="{{ asset('img/NOIMAGE.png') }}" class="w-100 img-fluid">
         @endif
     </div>
     <div class="col-md-6">
@@ -26,7 +28,7 @@
         </div>
 
         <div class="mb-5">
-            <button class="btn btn-primary" onclick="location.href='./{{ $productData->id }}/purchase'">支払いを確定する</button>
+            <button class="btn btn-primary" onclick="location.href='./purchase/complete'">支払いを確定する</button>
         </div>
     </div>
 </div>

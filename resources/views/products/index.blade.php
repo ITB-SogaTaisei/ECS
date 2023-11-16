@@ -10,7 +10,12 @@
                         
                         <div class="card-body">
                             <a href="{{ url('/product', $product->id) }}" class="card-title">{{ $product->name }}
-                                <img src="{{ $product->image }}" class="card-img-top" alt="{{ $product->name }}">
+                                <!-- <img src="{{ $product->image }}" class="card-img-top" alt="{{ $product->name }}"> -->
+                                @if ($product->image)
+                                    <img src="{{ asset($product->image) }}" class="card-img-top" alt="{{ $product->name }}">
+                                @else
+                                    <img src="{{ asset('img/NOIMAGE.png')}}" class="card-img-top" alt="{{ $product->name }}">
+                                @endif
                             </a>
                             
                         </div>

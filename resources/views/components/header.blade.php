@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-md navbar-light shadow-sm header-container">
   <div class="container">
-    <a class="navbar-brand" href="{{ url('/') }}">
+    <a class="navbar-brand" href="{{ url('/product') }}">
       {{ config('app.name', 'Laravel') }}
     </a>
 
