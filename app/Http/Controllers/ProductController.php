@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Product;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -20,12 +21,11 @@ class ProductController extends Controller
             $query->where('name', 'LIKE', "%{$keyword}%")
                 ->orWhere('description', 'LIKE', "%{$keyword}%");
                 $products = $query->get();
-        } else {
-            $products = $query->get();
-            // $products = Product::all();
+        } else {   
+            $products = Product::all();
         }
 
-        return view('products.index', compact('products', 'keyword'));
+        return view('products.index', compact('products'));
     }
 
     /**
@@ -57,8 +57,8 @@ class ProductController extends Controller
     public function purchase($id)
     {
         $productData = Product::find($id);
-        $userData = User::find($id);
-
+        $userData = Auth::user();
+        
         return view('products.purchase', ['productData' => $productData], ['userData' => $userData]);
     }
 
