@@ -1,10 +1,22 @@
-<nav class="navbar navbar-expand-md navbar-light shadow-sm ECS-header-container">
+<nav class="navbar navbar-expand-md navbar-light shadow-sm header-container">
   <div class="container">
     <a class="navbar-brand" href="{{ url('/') }}">
       {{ config('app.name', 'Laravel') }}
     </a>
-    <form class="row g-1">
+
+
+    
+    <form class="row g-1" action="{{ route('products.index') }}" method="GET">
+      @csrf
+      <div class="col-auto">
+        <input type="text" class="form-control header-search-input" name="keyword" value="">
+      </div>
+      <div class="col-auto">
+         <button type="submit" class="btn header-search-button"></button>
+      </div>
     </form>
+
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
       <span class="navbar-toggler-icon"></span>
     </button>
