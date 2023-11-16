@@ -11,11 +11,21 @@ class ProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::all();
+        $keyword = $request->input('keyword');
+        $query = Product::query();
 
-        return view('products.index', compact('products'));
+        if(!empty($keyword)) {
+            $query->where('name', 'LIKE', "%{$keyword}%")
+                ->orWhere('description', 'LIKE', "%{$keyword}%");
+                $products = $query->get();
+        } else {
+            $products = $query->get();
+            // $products = Product::all();
+        }
+
+        return view('products.index', compact('products', 'keyword'));
     }
 
     /**
