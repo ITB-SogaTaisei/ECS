@@ -4,7 +4,11 @@
  <div class="container">
      <div class="row justify-content-center">
          <div class="col-md-5">
-            <h3 class="mt-5 mb-3">ログイン</h3>
+            <div class="mt-3 mb-3 h2">ログイン
+                <span class="h6">
+                        <a href="{{ url('/product') }}">商品画面へ</a>
+                </span>
+            </div>
  
             <hr>
             <form method="POST" action="{{ route('login') }}">
