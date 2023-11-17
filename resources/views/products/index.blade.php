@@ -8,6 +8,7 @@
             </div> 
         @endif
         <h1>商品一覧</h1>
+
         <div class="container mt-4">
             <div class="row">
                 @foreach($products as $product)
@@ -26,8 +27,8 @@
                                 
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Price: {{ $product->price }}</li>
-                                <li class="list-group-item">Stock: {{ $product->stock }}</li>
+                                <li class="list-group-item">価格: {{ $product->price }}</li>
+                                <li class="list-group-item">在庫: {{ $product->stock }}</li>
                             </ul>
                         </div>
                     </div>

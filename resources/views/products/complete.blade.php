@@ -10,7 +10,7 @@
                     <div class="card-header">{{ __('購入が完了しました！') }}</div>
 
                     <div class="card-body">
-                        <p>Thank you for shopping!</p>
+                        <p>ご購入感謝します！</p>
                         <a href="/product" class="btn btn-primary mt-3">商品一覧に戻る</a>
                     </div>
                 </div>
