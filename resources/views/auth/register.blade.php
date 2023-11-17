@@ -4,7 +4,11 @@
  <div class="container">
      <div class="row justify-content-center">
          <div class="col-md-5">
-            <h3 class="mt-3 mb-3">新規会員登録</h3>
+            <div class="mt-3 mb-3 h3">新規会員登録
+                <span class="ml-3 h6">
+                        <a href="{{ url('/products') }}">ログイン画面へ</a>
+                </span>
+            </div>
             <hr>
  
             <form method="POST" action="{{ route('register') }}">
