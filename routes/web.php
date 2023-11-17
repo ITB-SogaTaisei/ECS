@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProductController;
 
 /*
@@ -22,8 +23,16 @@ Route::resource('products', ProductController::class)->middleware(['auth', 'veri
 Auth::routes(['verify' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/product/{id}', [ProductController::class, 'show']);
 
-Route::get('/product', [ProductController::class, 'index']);
-Route::get('/product/{id}/purchase', [ProductController::class, 'purchase']);
-Route::get('/product/{id}/purchase/complete', [ProductController::class, 'complete']);
+Route::prefix('/product')->group(function () {
+    Route::get('/', [ProductController::class, 'index']);
+    
+    Route::prefix('{id}')->group(function () {
+        Route::get('/', [ProductController::class, 'show']);
+        
+        Route::prefix('purchase')->group(function () {
+            Route::get('/', [ProductController::class, 'purchase']);
+            Route::get('/complete', [ProductController::class, 'complete'])->name('product.purchase.complete');
+        });
+    });
+});

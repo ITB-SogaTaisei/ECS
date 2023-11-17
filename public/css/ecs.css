@@ -1,6 +1,3 @@
-
-
-
 /* ユーザー関連のcss */
 .ECS-login-input {
     border-radius: 2px;
@@ -46,8 +43,18 @@
     color: #2e83c8;
 }
 
+body {
+    margin-bottom: 60px; /* ナビゲーションバーの高さより大きい値 */
+}
 
+.card {
+    height: 100%;
+}
 
+.card-img-top {
+    object-fit: cover;
+    height: 200px; /* 適切な高さを指定 */
+}
 
 
 /* header */
