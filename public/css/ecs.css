@@ -21,6 +21,7 @@
     border-radius: 2px;
     background-color: #cc3b4c;
 }
+
 .ECS-require-input-label-text {
     font-size: 14px;
     font-weight: 500;
@@ -36,10 +37,6 @@
     letter-spacing: normal;
     color: white;
     background-color: #2e83c8;
-}
-.ECS-submit:hover {
-    border-color: #2e83c8;
-	background-color: #fff;
 }
 .ECS-login {
     font-size: 14px;
@@ -63,7 +60,7 @@ body {
 }
 
 
-/* header & footer */
+/* header */
 .ECS-header-container {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
