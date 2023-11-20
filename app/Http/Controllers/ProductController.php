@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
+
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['purchase']]);
+    }
+
     /**
      * Display a listing of the resource.
      */

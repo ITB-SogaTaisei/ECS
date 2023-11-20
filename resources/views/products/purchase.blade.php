@@ -24,7 +24,7 @@
 
         <div class="mb-5">
             <h2>合計</h2>
-            <p class="h3 text-primary">￥{{ $productData->price }}</p>
+            <p class="h3 text-primary">￥{{ number_format($productData->price) }}</p>
         </div>
 
         <div class="mb-5">

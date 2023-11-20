@@ -6,7 +6,7 @@
 @if ($level === 'error')
 # @lang('Whoops!')
 @else
-# @lang('会員登録手続きありがとうございます！！')
+# @lang('')
 @endif
 @endif
 

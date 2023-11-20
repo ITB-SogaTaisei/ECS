@@ -8,13 +8,16 @@ use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 use Illuminate\Auth\Notifications\ResetPassword;
 
-class CustomResetPassword extends ResetPassword
+
+class CustomResetPassword extends  ResetPassword
 {
     use Queueable;
-    public $token;
+        public $token;
 
     /**
      * Create a new notification instance.
+     *
+     * @return void
      */
     public function __construct($token)
     {
@@ -24,31 +27,35 @@ class CustomResetPassword extends ResetPassword
     /**
      * Get the notification's delivery channels.
      *
-     * @return array<int, string>
+     * @param  mixed  $notifiable
+     * @return array
      */
-    public function via(object $notifiable): array
+    public function via($notifiable)
     {
         return ['mail'];
     }
 
     /**
      * Get the mail representation of the notification.
+     *
+     * @param  mixed  $notifiable
+     * @return \Illuminate\Notifications\Messages\MailMessage
      */
-    public function toMail(object $notifiable): MailMessage
+    public function toMail($notifiable)
     {
         return (new MailMessage)
-        ->line(__('Click button below and reset password.'))
-        ->action(__('Reset password'), url(route('password.reset', $this->token, false)))
-        ->line(__('If you did not request a password reset, no further action is required.'));
-
-    }
+            ->line(__('Click button below and reset password.'))
+            ->action(__('Reset password'), url(route('password.reset', $this->token, false)))
+            ->line(__('If you did not request a password reset, no further action is required.'));
+}
 
     /**
      * Get the array representation of the notification.
      *
-     * @return array<string, mixed>
+     * @param  mixed  $notifiable
+     * @return array
      */
-    public function toArray(object $notifiable): array
+    public function toArray($notifiable)
     {
         return [
             //
