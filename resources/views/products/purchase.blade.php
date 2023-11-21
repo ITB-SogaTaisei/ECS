@@ -3,7 +3,7 @@
 @section('content')
 
 <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-5 show-img">
         @if ($productData->image)
             <img src="{{ asset($productData->image) }}" class="w-100 img-fluid">
             @else
@@ -17,9 +17,9 @@
 
         <div class="mb-5">
             <h2>お届け先</h2>
-            <h4>{{ $userData->name }}</h4>
-            <h4>{{ $userData->postal_code }}</h4>
-            <h4>{{ $userData->address }}</h4>
+            <h4>名前：{{ $userData->name }}</h4>
+            <h4>郵便番号：{{ $userData->postal_code }}</h4>
+            <h4>配送先:{{ $userData->address }}</h4>
         </div>
 
         <div class="mb-5">
