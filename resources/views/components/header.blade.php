@@ -33,12 +33,9 @@
         </li>
         @else
         <li class="nav-item mr-5">
-          <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-            ログアウト
+          <a class="nav-link" href="{{ route('mypage') }}">
+            <label>マイページ</label>
           </a>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-          </form>
         </li>
         @endguest
       </ul>

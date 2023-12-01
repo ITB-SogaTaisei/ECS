@@ -3,6 +3,7 @@
     overflow: auto;
     margin-bottom: 80px;
 }
+
 .product-list {
     position: static;
     margin: 60px 0px 40px 300px;
@@ -12,6 +13,7 @@
     overflow: auto;
 }
 .product-name {
+    height: 40px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
@@ -44,6 +46,10 @@
     opacity: 0;
     }
 }
+
+
+
+
 
 
 
@@ -131,4 +137,30 @@ body {
 .ECS-header-container {
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
+}
+
+
+
+
+
+/* マイページ関連のcss */
+
+.mypage-container {
+    padding: 0.2em 0.5em;
+    color: #565656;
+    background: #baf0f6;
+    box-shadow: 0px 0px 0px 10px #baf0f6;
+    border: dashed 3px rgb(110, 199, 255);
+    border-radius: 8px;
+}
+
+.user-name {
+    font-size: 20px;
+}
+/* 会員情報変更画面 */
+.mypage-div {
+    font-size: 30px;
+}
+.mypage-span {
+    font-size: 14px;
 }

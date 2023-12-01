@@ -5,7 +5,7 @@
 @section('content')
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-5">
                 <div class="card">
                     <div class="card-header">{{ __('購入が完了しました！') }}</div>
 

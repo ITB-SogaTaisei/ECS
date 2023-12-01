@@ -17,7 +17,7 @@
 
         
         <button class="btn btn-primary mb-3" onclick="location.href='./{{ $productData->id }}/purchase'">購入する</button>
-        <p class="text-muted" style="max-width: 80%;">{{ $productData->description }}</p>
+        <p class="text-muted" style="max-width: 80%;">{!! nl2br($productData->description) !!}</p>
     </div>
 </div>
 
