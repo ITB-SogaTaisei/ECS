@@ -1,7 +1,13 @@
 @extends('layouts.app')
- @section('content')
+@section('content')
 
- <div class="container">
+@if (session('message-login'))
+    <div class="message-login">     
+    {{ session('message-login') }}
+    </div> 
+@endif
+
+ <div class="container mt-5">
      <div class="row justify-content-center">
          <div class="col-md-5">
             <div class="mt-3 mb-3 h2">ログイン

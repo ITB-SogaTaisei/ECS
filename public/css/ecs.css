@@ -143,7 +143,13 @@ body {
 
 
 
-/* マイページ関連のcss */
+/* ユーザー関連のcss */
+
+
+/* ログイン画面 */
+.message {
+    margin-bottom: 100px;
+}
 
 .mypage-container {
     padding: 0.2em 0.5em;
@@ -153,9 +159,12 @@ body {
     border: dashed 3px rgb(110, 199, 255);
     border-radius: 8px;
 }
-
 .user-name {
     font-size: 20px;
+}
+.mypage-label {
+    color: #2e83c8;
+    font-size: 60px;
 }
 /* 会員情報変更画面 */
 .mypage-div {
