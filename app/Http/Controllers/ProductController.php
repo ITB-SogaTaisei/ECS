@@ -27,9 +27,9 @@ class ProductController extends Controller
         if(!empty($keyword)) {
             $query->where('name', 'LIKE', "%{$keyword}%")
                 ->orWhere('description', 'LIKE', "%{$keyword}%");
-                $products = $query->get();
+                $products = $query->paginate(10);
         } else {   
-            $products = Product::all();
+            $products = Product::paginate(10);
         }
 
         return view('products.index', compact('products'));
@@ -64,13 +64,15 @@ class ProductController extends Controller
     public function purchase($id)
     {
         $productData = Product::find($id);
-        $userData = Auth::user();
         
+        $userData = Auth::user();
+
         return view('products.purchase', ['productData' => $productData], ['userData' => $userData]);
     }
 
-    public function complete()
+    public function complete($id)
     {
+        $productData = Product::find($id)->decrement('stock', 1);
         return view('products.complete');
     }
 

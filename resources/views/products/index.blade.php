@@ -36,6 +36,7 @@
                     </div>
                 @endforeach
             </div>
+            {{ $products->appends(request()->query())->links() }}
         </div>
     </div>
 
