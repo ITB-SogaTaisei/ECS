@@ -20,7 +20,7 @@
                                 <div class="product-img">
                                     <a href="{{ url('/product', $product->id) }}" class="card-title">
                                         @if ($product->image)
-                                            <img src="{{ asset($product->image) }}" class="card-img-top">
+                                            <img src="{{ asset($product->image) }}" class="w-100 img-fluid">
                                         @else
                                             <img src="{{ asset('img/NOIMAGE.png')}}" class="card-img-top">
                                         @endif

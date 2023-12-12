@@ -21,15 +21,15 @@ class ProductController extends Controller
      */
     public function index(Request $request)
     {
+    
         $keyword = $request->input('keyword');
         $query = Product::query();
 
         if(!empty($keyword)) {
-            $query->where('name', 'LIKE', "%{$keyword}%")
-                ->orWhere('description', 'LIKE', "%{$keyword}%");
-                $products = $query->paginate(10);
+            $query->where('name', 'LIKE', "%{$keyword}%");
+                $products = $query->paginate(12);
         } else {   
-            $products = Product::paginate(10);
+            $products = Product::paginate(12);
         }
 
         return view('products.index', compact('products'));
@@ -40,7 +40,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('products.addition');
     }
 
     /**
@@ -48,7 +48,26 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $image = $request->file('files');
+
+        if($request->hasFile('files') && $image->isValid()){
+          $file_name = $image->getClientOriginalName();
+          $path = $image->storeAs('public', $file_name, ['disk' => 'local']);
+          $path = asset("storage/${file_name}");
+        }else{
+          $path = null;
+        }
+
+        $product = new Product();
+        $product->name = $request->input('name');
+        $product->image = $path;
+        $product->description = $request->input('description');
+        $product->stock = $request->input('stock');
+        $product->price = $request->input('price');                
+        $product->save();
+
+	    return redirect('products')->with('message-login', '商品が出品されました！！');
     }
 
     /**
