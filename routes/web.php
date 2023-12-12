@@ -28,8 +28,15 @@ Route::controller(UserController::class)->group(function() {
     Route::put('users/mypage/password', 'change_password')->name('mypage.change_password');
 });
 
-Route::resource('products', ProductController::class)->middleware(['auth', 'verified']);
 Auth::routes(['verify' => true]);
+
+Route::get('products', [ProductController::class, 'index'])->name('products.index');
+Route::get('/', [ProductController::class, 'show', 'purchase', 'complete', 'addition'])->middleware(['auth', 'verified',]);
+
+Route::middleware(['AdminMiddleware'])->group(function () {
+    Route::get('addition', [ProductController::class, 'create'])->name('products.crate');
+    Route::post('products', [ProductController::class, 'store'])->name('products.store');
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 

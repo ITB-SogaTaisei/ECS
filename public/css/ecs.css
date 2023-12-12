@@ -6,7 +6,7 @@
 
 .product-list {
     position: static;
-    margin: 60px 0px 40px 300px;
+    margin: 40px 0px 40px 300px;
 }
 .card-body {
     position: relative;
@@ -29,7 +29,7 @@
 .message-login {
     position: absolute;
     padding: 0.75rem 1.25rem;
-    top: 70px;
+    top: 90px;
     left: 50%;
     transform: translateX(-50%);
     border: 1px solid transparent;
@@ -133,12 +133,6 @@ body {
 }
 
 
-/* header & footer */
-.ECS-header-container {
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-}
-
 
 
 
@@ -164,7 +158,18 @@ body {
 }
 .mypage-label {
     color: #2e83c8;
-    font-size: 60px;
+    font-size: 50px;
+    margin-right: 30px;
+}
+.mypage-label1 {
+    color: #2e83c8;
+    font-size: 50px;
+    margin-right: 25px;
+}
+.mypage-label2 {
+    color: #2e83c8;
+    font-size: 50px;
+    margin-right: 40px;
 }
 /* 会員情報変更画面 */
 .mypage-div {
@@ -172,4 +177,30 @@ body {
 }
 .mypage-span {
     font-size: 14px;
+}
+
+
+
+
+
+/* header & footer */
+.header-container {
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+    background-color: #a5f8ee;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 75px;
+    padding: 30px;
+    margin-bottom: 50px;
+    color: #000000;
+    z-index: 100;
+}
+.header-search {
+    margin-left: 300px;
+    width: 450px;
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid #2e83c8;
+    box-sizing: border-box;
 }

@@ -3,7 +3,7 @@
 
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
     <div class="row">
         <div class="col-6 offset-3 bg-white mypage-container">
             <div class="text-center pb-1 pt-3 mypage-div">会員情報の編集
