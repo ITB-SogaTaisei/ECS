@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CartController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -45,3 +47,14 @@ Route::prefix('/product')->group(function () {
         });
     });
 });
+
+//Route::get('/product/{id}', 'ProductController@show')->name('product.show');
+
+Route::get('/cart', [CartController::class, 'show']);
+Route::post('/product/{id}/add-to-cart', [CartController::class, 'addToCart'])->name('cart.add');
+Route::delete('/cart/{productId}/remove', [CartController::class, 'remove'])->name('cart.remove');
+
+Route::get('/cart/balk_purchase', [CartController::class, 'bulk_purchase']);
+Route::get('/purchase/compete', [CartController::class, 'complete']);
+
+//Route::get('/purchase/compete', [CartController::class, '']);
